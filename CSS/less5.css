@@ -1,0 +1,65 @@
+p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.ex5a{
+    font-family: Tahoma;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.ex5b{
+    font-family: Arial;
+    font-weight: bold;
+    line-height: 25px;
+    margin-bottom: 50px;
+}
+.sales{
+    font-style: italic;
+    font-weight: 550;
+    color: red;
+}
+.ex5c1{
+    margin-bottom: 4px;
+    font-family: Verdana;
+    font-weight: bold;
+}
+.ex5c2{
+    margin-bottom: 15px;
+    font-family: Verdana;
+    color: rgb(64, 64, 64);
+}
+.ex5c3{
+    margin-bottom: 15px;
+    width: 300px;
+    font-family: Verdana;
+}
+
+.start{
+    font-family: Verdana;
+    background-color: rgb(46, 164, 79);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+}
+
+.title {
+    font-family: Arial;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-family: Arial;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.link {
+    font-family: Arial;
+    text-align: center;
+    color: rgb(58, 108, 199);
+}
