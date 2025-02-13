@@ -4,5 +4,29 @@
     left: 0;
     bottom: 0;
     background-color: #fff;
-    width: 72px;
+    width: 80px;
+    z-index: 200;
+    padding-top: 5px;
+}
+
+.sidebar-link{
+    height: 91px;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sidebar-link:hover{
+    background-color: rgb(236, 236, 236);
+}
+
+.sidebar-link img{
+    height: 37%;
+    margin-bottom: 5px;
+}
+
+.sidebar-link div{
+    font-family: Roboto, Arial;
+    font-size: 11px;
 }
