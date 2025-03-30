@@ -24,6 +24,6 @@ console.log(newDate); // returns current date and time in some ajeeb format
 console.log(newDate.getMonth()); // returns month number (Starting from Jan=0)
 console.log(newDate.getDay()); // returns day number (Starting from Mon=1)
 
-newDate.toLocaleString('default', {
-    weekday: "long"
+newDate.toLocaleString('default', {     
+    weekday: "long"                           //doubt h isme
 })

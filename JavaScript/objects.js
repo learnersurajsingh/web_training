@@ -1,6 +1,9 @@
+//singleton
+//Object.create    (constructor method)
+
 //Objects literals
 
-const mySym = Symbol("key1")
+const mySym = Symbol("key1")    //creates a Symbol as mySym
 
 const JsUser = {
     name :"suraj",
@@ -19,7 +22,7 @@ console.log(JsUser["full name"]);
 console.log(JsUser[mySym]);
 
 JsUser.age = 22
-// Object.freeze(JsUser)
+// Object.freeze(JsUser) //freezes object and doesn't allows to get modified
 JsUser.age = 23
 
 console.log(JsUser);
