@@ -1,4 +1,4 @@
-const user = {
+    const user = {
     username: "Suraj",
     price: 199,
 
