@@ -7,9 +7,9 @@ buttons.forEach((btn)=>{
             bdy.style.backgroundColor=e.target.id
         if(e.target.id==='white')
             bdy.style.backgroundColor=e.target.id
-        if(e.target.id==='blue')
-            bdy.style.backgroundColor=e.target.id
         if(e.target.id==='yellow')
+            bdy.style.backgroundColor=e.target.id
+        if(e.target.id==='blue')
             bdy.style.backgroundColor=e.target.id
     })
 })

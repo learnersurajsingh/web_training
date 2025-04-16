@@ -1,85 +1,74 @@
-let random = parseInt(Math.random()*100+1)
-console.log(random);
-
+const random = parseInt(Math.random()*100+1)
 const input = document.querySelector('#guessField')
 const submit = document.querySelector('#subt')
-const result = document.querySelector('.resultParas')
 const prev = document.querySelector('.guesses')
 const remaining = document.querySelector('.lastResult')
-const display = document.querySelector('.lowOrHi')
+const output = document.querySelector('.lowOrHi')
+const result = document.querySelector('.resultParas')
 
-let playGame = true
-let prevGuess = []
-let numGuess = 0
-let p = document.createElement('p')
+const p = document.createElement('p')
 
-if(playGame){
-   submit.addEventListener('click',(e)=>{
-    e.preventDefault()
-    let guess = parseInt(input.value)
-    validateGuess(guess)
-   })
-}
-function validateGuess(guess){
-    if(guess==='' || isNaN(guess) || guess<1 || guess>100){
+let GuessList = [];
+let numGuess = 0;
+
+submit.addEventListener('click',(e)=>{
+    e.preventDefault();
+    const guess = parseInt(input.value)
+    if(guess==='' || guess<1 || guess>100 || isNaN(guess)){
         alert('Please enter a valid number')
     }
     else{
-        prevGuess.push(guess)
-        if(numGuess==9){
-            displayGuess(guess)
-            displayMessage(`Game Over. The number was ${random}`)
-            endGame()
-        }
-        else{
-            checkGuess(guess)
-        }
+            displayGuess(guess);
+            checkGuess(guess);
+            if(numGuess==10){
+                displayMessage(`Your guess limit is over. The correct number was ${random}`)
+                endGame();
+            }
+        
     }
-}
+
 function checkGuess(guess){
-    if(guess == random){
-        displayMessage(`You guessed it right`);
-        displayGuess(guess)
-        endGame();
+    if(guess===random){
+        displayMessage(`You guessed it right.`)
+        endGame()
     }
-    else if(guess>random){
-        displayMessage(`Number is high`)
-        displayGuess(guess);
+    else if(guess<random){
+        displayMessage(`Your guess is low.`)
     }
     else{
-        displayMessage(`Number is low`)
-        displayGuess(guess);
+        displayMessage(`Your guess is high`)
     }
 }
+
 function displayGuess(guess){
-    input.value=''
-    numGuess++;
+    GuessList.push(guess)
+    numGuess++
     prev.innerHTML+=`${guess} `
     remaining.innerHTML=`${10-numGuess}`
+    input.value=""
 }
+
 function displayMessage(message){
-    display.innerHTML = `<h2>${message}</h2>`
+    output.innerHTML = `<h2>${message}</h2>`
 }
 
 function endGame(){
-    input.setAttribute('disabled', '')
-    p.innerHTML = `<h3 id='new'>Start Again</h3>`
+    input.setAttribute('disabled', ' ')
+    p.innerHTML=`<h2>Start Again</h2>`
     result.appendChild(p)
-    playGame= false;
     newGame()
 }
 
 function newGame(){
-    const newGameBtn = document.querySelector('#new')
-    newGameBtn.addEventListener('click',(e)=>{
-        random = parseInt(Math.random()*100+1)
-        input.removeAttribute('disabled', '')
+    p.addEventListener('click',(e)=>{
+        input.removeAttribute('disabled', ' ')
         result.removeChild(p)
-        prevGuess =[]
+        input.value=""
+        prev.innerHTML=""
+        GuessList= []
         numGuess=0
-        prev.innerHTML=''
         remaining.innerHTML=`${10-numGuess}`
         displayMessage('')
-        playGame= true;
     })
 }
+})
